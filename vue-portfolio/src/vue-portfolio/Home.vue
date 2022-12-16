@@ -1,12 +1,12 @@
 <template>
 
- <section class="home"  :class="{'dark':dark,'oran':oran}">
+ <div class="home"  :class="{'ani':ani,'dark':dark,'oran':oran,'red':red,'green':green,'blue':blue,'pink':pink}">
 
   <div class="home-text">
     <h1>Hello, my name is <p>Hnin Moh Moh Lwin</p></h1>
   <h2 class="home-web">I'm a <p class="animate typed-text">{{typeValue}}</p><span class="cursor" :class="{'typing': typeStatus}">|</span></h2>
   <p class="home-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ratione minus necessitatibus incidunt sint ipsum nesciunt quod, praesentium blanditiis esse porro minima reprehenderit aliquam tenetur dolores laboriosam aperiam voluptatibus aliquid!</p>
-  <button class="home-btn">More about me</button>
+  <router-link to="/about" exact><button class="home-btn">More about me</button></router-link>
  
   </div>
   <div class="home-bg">
@@ -14,7 +14,7 @@
   </div>
   </div>
  
- </section>
+ </div>
   
 </template>
 
@@ -31,6 +31,21 @@ export default {
     },
     oran: {
       type:Boolean
+    },
+    red: {
+      type:Boolean
+    },
+    green: {
+      type: Boolean
+    },
+    blue: {
+      type: Boolean
+    },
+    pink: {
+      type: Boolean
+    },
+    ani: {
+      type: Boolean
     }
   },
   data () {
@@ -87,6 +102,19 @@ export default {
 </script>
 
 <style scoped>
+/*Animation*/
+.ani{
+  position: relative;
+  animation-name: route;
+  animation-duration: 1s;
+  
+}
+@keyframes route {
+  0%   { right:-500px}
+  50%{right:100px}
+  75% {right:50px}
+  100% { left: 0px}
+}
 .home{
   display: flex;
   background-color: #f0f0f0;
@@ -124,12 +152,13 @@ export default {
   border-radius: 50px;
   background-color: #ff304f;
   border: 1px solid #ff304f;
-  color: #fff;
+ color: #fff ;
 }
 .home-btn:hover{
   background-color: #fff;
   color: #000;
   border-color: #ff304f;
+  transition: 0.3s;
 }
 /*Image*/
 .home-bg{
@@ -139,7 +168,7 @@ export default {
  padding: 50px 70px;
  background-image: linear-gradient(#ff304f, #ff304f), linear-gradient(#ff304f, #ff304f), linear-gradient(#ff304f, #ff304f), linear-gradient(#ff304f, #ff304f);
     background-repeat: no-repeat;
-    background-size: 9px 20%, 20% 9px, 9px 20%, 20% 9px, calc(100% - 8px) calc(100% - 8px);
+    background-size: 9px 20%, 20% 9px, 10px 20%, 20% 10px, calc(100% - 8px) calc(100% - 8px);
     background-position: left top, left top, right bottom, right bottom, 4px 4px;
 }
 .home-img{
@@ -171,6 +200,7 @@ export default {
     background-color: transparent;
   }
 }
+
 /*ChangeDark*/
 .dark{
   background-color: #000;
@@ -178,7 +208,7 @@ export default {
 .dark .home-text h1, .dark .home-web,.dark .home-para{
   color: #fff;
 }
-/*Red*/
+/*Orange*/
 .oran .home-text h1 p,.oran .home-web p{
   color: #ffa45c;
 }
@@ -191,6 +221,66 @@ export default {
   border-color: #ffa45c;
 }
 .oran .home-bg{
-  background-image: linear-gradient(#ffa45c, #ffa45c), linear-gradient(#ffa45c, #ffa45c), linear-gradient(#ffa45c, #ffa45c), linear-gradient(#ff304f, #ffa45c);
+  background-image: linear-gradient(#ffa45c, #ffa45c), linear-gradient(#ffa45c, #ffa45c), linear-gradient(#ffa45c, #ffa45c), linear-gradient(#ffa45c, #ffa45c);
+}
+/*Red*/
+.red .home-text h1 p,.red .home-web p{
+  color: #ff304f;
+}
+.red .home-btn{
+  background-color: #ff304f;
+  border-color: #ff304f;
+}
+.red .home-btn:hover{
+  background-color: #fff;
+  border-color: #ff304f;
+}
+.red .home-bg{
+  background-image: linear-gradient(#ff304f, #ff304f), linear-gradient(#ff304f, #ff304f), linear-gradient(#ff304f, #ff304f), linear-gradient(#ff304f, #ff304f);
+}
+/*Green*/
+.green .home-text h1 p,.green .home-web p{
+  color: #086972;
+}
+.green .home-btn{
+  background-color: #086972;
+  border-color: #086972;
+}
+.green .home-btn:hover{
+  background-color: #fff;
+  border-color: #086972;
+}
+.green .home-bg{
+  background-image: linear-gradient(#086972, #086972), linear-gradient(#086972, #086972), linear-gradient(#086972, #086972), linear-gradient(#086972, #086972) ; 
+}
+/*Blue*/
+.blue .home-text h1 p,.blue .home-web p{
+  color: #1f4287;
+}
+.blue .home-btn{
+  background-color: #1f4287;
+  border-color: #1f4287;
+}
+.blue .home-btn:hover{
+  background-color: #fff;
+  border-color: #1f4287;
+}
+.blue .home-bg{
+  background-image: linear-gradient(#1f4287, #1f4287), linear-gradient(#1f4287, #1f4287), linear-gradient(#1f4287, #1f4287), linear-gradient(#1f4287, #1f4287) ; 
+}
+/*Pink*/
+.pink .home-text h1 p,.pink .home-web p{
+  color: #ea7dc7;
+}
+.pink .home-btn{
+  background-color: #ea7dc7;
+  border-color: #ea7dc7;
+}
+.pink .home-btn:hover{
+  background-color: #fff;
+  border-color: #ea7dc7;
+}
+.pink .home-bg{
+  background-image: linear-gradient(#ea7dc7, #ea7dc7), linear-gradient(#ea7dc7, #ea7dc7), linear-gradient(#ea7dc7, #ea7dc7), linear-gradient(#ea7dc7, #ea7dc7) ; 
 }
 </style>

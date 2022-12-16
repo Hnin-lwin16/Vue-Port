@@ -1,6 +1,6 @@
 <template>
   
-  <section class="nav" :class="{'dark':dark,'whole-oran':oran}">
+  <section class="nav" :class="{'dark':dark,'whole-oran':oran,'whole-red':red,'whole-green':green,'whole-blue': blue,'whole-pink':pink}">
     <div class="nav-title">
 
         <h1>Atlas</h1>
@@ -8,7 +8,7 @@
     <div class="nav-list">
         <ul class="nav-item">
           
-            <li> <router-link to="/" exact><font-awesome-icon icon="fa-solid fa-home" />Home</router-link></li>
+            <li @click="animation"> <router-link to="/" exact><font-awesome-icon icon="fa-solid fa-home" />Home</router-link></li>
             <li> <router-link to="/about" exact><font-awesome-icon icon="fa-solid fa-user" />About</router-link></li>
             <li> <router-link to="/service" exact><font-awesome-icon icon="fa-solid fa-list" />Services</router-link></li>
             <li><router-link to="/porfolio" exact><font-awesome-icon icon="fa-solid fa-briefcase" />Portfolio</router-link></li>
@@ -28,11 +28,11 @@
     <div class="theme-btn"  v-if="themeItem">
       <h3>Theme Colors</h3>
       <ul>
-        <li><div  class="red" @click="changeOran"></div></li>
-        <li><div></div></li>
-        <li><div></div></li>
-        <li><div></div></li>
-        <li><div></div></li>
+        <li><div  class="red" @click="changeRed"></div></li>
+        <li><div class="oran" @click="changeOran"></div></li>
+        <li><div class="green" @click="changeGreen"></div></li>
+        <li><div class="blue" @click="changeBlue"></div></li>
+        <li><div class="pink" @click="changePink"></div></li>
       </ul>
     </div>
    
@@ -52,19 +52,65 @@ export default {
     },
     oran: {
       type: Boolean
+    },
+    red: {
+      type: Boolean
+    },
+    green: {
+      type: Boolean
+    },
+    blue: {
+      type: Boolean
+    },
+    pink: {
+      type: Boolean
+    },
+    ani: {
+      type: Boolean
     }
   },
   data () {
     return {
-      themeItem:false
+      themeItem: false,
     }
   },
   methods: {
+    animation: function(){
+      this.$emit('animation',this.ani = !this.ani)
+    },
     changeDark: function () {
       this.$emit('changeDark',this.dark = !this.dark)
     },
     changeOran: function () {
-      this.$emit('changeOran', this.oran = true)
+      this.$emit('changeOran', [
+        this.oran = !this.oran,
+        this.red = this.green = this.blue = this.pink = false
+      ])
+    },
+    changeRed: function () {
+      this.$emit('changeRed', [
+        this.red = !this.red,
+        this.oran = this.green = this.blue = this.pink = false
+      ])
+    
+    },
+    changeGreen: function () {
+      this.$emit('changeGreen', [
+        this.green = !this.green,
+        this.red = this.oran = this.blue = this.pink = false
+      ])
+    },
+    changeBlue: function () {
+      this.$emit('changeBlue', [
+      this.blue = !this.blue,
+        this.red =  this.oran = this.green = this.pink = false
+      ])
+    },
+    changePink: function () {
+      this.$emit('changePink', [
+        this.pink = !this.pink,
+        this.red=this.oran=this.green=this.blue = false
+      ])
     },
     theme: function () {
       this.themeItem = !this.themeItem
@@ -95,21 +141,19 @@ font-family: 'Roboto', sans-serif;*/
   height: 100vh;
 }
 .nav-title{
-  padding: 35px 0 150px 0;
-  
-  
+  padding: 35px 0 150px 0;  
 }
 .nav-title h1{
   background-image: linear-gradient(#ff304f, #ff304f), linear-gradient(#ff304f, #ff304f), linear-gradient(#ff304f, #ff304f), linear-gradient(#ff304f, #ff304f);
     background-repeat: no-repeat;
-    background-size: 4px 50%, 40% 4px, 4px 50%, 40% 4px, calc(100% - 8px) calc(100% - 8px);
+    background-size: 4px 40%, 30% 4px, 4px 40%, 30% 4px, calc(100% - 8px) calc(100% - 8px);
     background-position: left bottom, left bottom, right top, right top, 4px 4px;
     font-weight: 700;
     font-size: 30px;
-    width: 200px;
+    width: 150px;
     /*margin: 20px;*/
     margin: 0 auto;
-  padding: 30px;
+  padding: 30px 10px;
    text-align: center;
 }
 
@@ -122,7 +166,7 @@ font-family: 'Roboto', sans-serif;*/
 .change-dark{
     position: fixed;
     right: 5%;
-    top: 20%;
+    top: 17%;
     width: 50px;
     padding: 10px;
     border-radius: 50%;
@@ -130,17 +174,19 @@ font-family: 'Roboto', sans-serif;*/
     background-color: #fbf9fa;
     border: 1px solid #fbf9fa;
    margin-right: 20px;
+   z-index: 99999;
   }
   .theme-btn{
     
     position: fixed;
     right: 1px;
-    top: 13%;
+    top: 10%;
     background-color: #fff;
     text-align: left;
     padding: 20px;
     border: 1px solid #fff;
     border-radius: 5px;
+    z-index: 99999;
   }
   .theme-btn ul{
     list-style: none;
@@ -163,13 +209,26 @@ font-family: 'Roboto', sans-serif;*/
   }
   .theme{
     right: 5%;
-    top: 13%;
+    top: 10%;
   }
   .whole-theme .theme, .whole-theme .change-dark{
     right: 13%;
   }
+  
   .red{
+    background-color: #ff304f;
+  }
+  .oran{
     background-color: #ffa45c;
+  }
+  .green{
+    background-color: #086972;
+  }
+  .blue{
+    background-color: #1f4287;
+  }
+  .pink{
+    background-color: #ea7dc7;
   }
   .spin{
     animation: spin 2s linear infinite;
@@ -228,11 +287,39 @@ font-family: 'Roboto', sans-serif;*/
   background-color: #575151;
   border-color: #7c7c7c;
 }
-/*Red*/
+/*Orange*/
 .whole-oran .nav-title h1{
   background-image: linear-gradient(#ffa45c, #ffa45c), linear-gradient(#ffa45c, #ffa45c), linear-gradient(#ffa45c, #ffa45c), linear-gradient(#ffa45c, #ffa45c);
 }
 .whole-oran .router-link-active{
   color: #ffa45c !important;
+}
+/*Red*/
+.whole-red .nav-title h1{
+  background-image: linear-gradient(#ff304f, #ff304f), linear-gradient(#ff304f, #ff304f), linear-gradient(#ff304f, #ff304f), linear-gradient(#ff304f, #ff304f);
+}
+.whole-red .router-link-active{
+  color: #ff304f !important;
+}
+/*Green*/
+.whole-green .nav-title h1{
+  background-image: linear-gradient(#086972, #086972), linear-gradient(#086972, #086972), linear-gradient(#086972, #086972), linear-gradient(#086972, #086972);
+}
+.whole-green .router-link-active{
+  color: #086972 !important;
+}
+/*Blue*/
+.whole-blue .nav-title h1{
+  background-image: linear-gradient(#1f4287, #1f4287), linear-gradient(#1f4287, #1f4287), linear-gradient(#1f4287, #1f4287), linear-gradient(#1f4287, #1f4287);
+}
+.whole-blue .router-link-active{
+  color: #1f4287 !important;
+}
+/*Pink*/
+.whole-pink .nav-title h1{
+  background-image: linear-gradient(#ea7dc7, #ea7dc7), linear-gradient(#ea7dc7, #ea7dc7), linear-gradient(#ea7dc7, #ea7dc7), linear-gradient(#ea7dc7, #ea7dc7);
+}
+.whole-pink .router-link-active{
+  color: #ea7dc7 !important;
 }
 </style>
