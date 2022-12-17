@@ -75,6 +75,7 @@ export default {
 
   .body{
     display: flex;
+    flex-wrap: wrap;
   }
   .ani{
   position: relative;
@@ -88,5 +89,6 @@ export default {
   75% {right:50px}
   100% { left: 0px}
 }
+
   
 </style>

@@ -107,7 +107,8 @@ export default {
 .home{
   display: flex;
   background-color: #f0f0f0;
-
+  width: 80%;
+  transition: 0.3s;
 }
 .home-text{
   width: 50%;

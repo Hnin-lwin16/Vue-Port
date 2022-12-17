@@ -128,9 +128,10 @@ font-family: 'Roboto', sans-serif;*/
 
 
 .nav{
-  width: 30%;
+  width: 20%;
   background-color: #fbf9fa;
   height: 100vh;
+  transition: 0.3s;
 }
 .nav-title{
   padding: 35px 0 150px 0;  
@@ -169,7 +170,7 @@ font-family: 'Roboto', sans-serif;*/
    z-index: 99999;
   }
   .theme-btn{
-    
+    transition: 0.3s;
     position: fixed;
     right: 1px;
     top: 10%;
@@ -258,6 +259,7 @@ font-family: 'Roboto', sans-serif;*/
 /*Change Dark*/
 .dark{
   background-color: #575151;
+  
 }
 .dark .nav-title h1{
   color: #fff;
