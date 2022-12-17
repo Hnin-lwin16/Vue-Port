@@ -2,10 +2,10 @@
   <div>
   
   <div class="body">
-    <header-nav v-bind:oran="oran"  v-bind:dark="dark" v-bind:red="red" v-bind:green="green" :blue="blue" :pink="pink" v-bind:ani="ani" v-bind:moon="moon" v-on:animation="Ani($event)" v-on:changeDark="Dark($event)" v-on:changeOran="Oran($event)" v-on:changeRed="Red($event)" v-on:changeGreen="Green($event)" v-on:changeBlue="Blue($event)" v-on:changePink="Pink($event)">
+    <header-nav v-bind:oran="oran"  v-bind:dark="dark" v-bind:red="red" v-bind:green="green" :blue="blue" :pink="pink" v-bind:ani="ani" v-bind:moon="moon" v-on:animation="Ani($event)" v-on:changeDark="Dark($event)" v-on:changeOran="Oran($event)" v-on:changeRed="Red()" v-on:changeGreen="Green($event)" v-on:changeBlue="Blue($event)" v-on:changePink="Pink($event)">
       
     </header-nav>
-    <router-view v-bind:dark="dark" v-bind:oran="oran" v-bind:red="red" v-bind:green="green" :blue="blue" :pink="pink" :ani="ani"></router-view>
+    <router-view class="router" v-bind:dark="dark" v-bind:oran="oran" v-bind:red="red" v-bind:green="green" :blue="blue" :pink="pink" :ani="ani"></router-view>
     
   </div>
 </div>
@@ -50,8 +50,8 @@ export default {
       this.oran = oran,
       this.red =  this.green =  this.blue =  this.pink = remove
     },
-    Red: function (red,remove) {
-      this.red = red,
+    Red: function (remove) {
+     
       this.oran =  this.green = this.blue = this.pink = remove
     },
     Green: function (green,remove) {
@@ -71,25 +71,22 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
   .body{
     display: flex;
   }
-  .change-dark{
-    position: fixed;
-    right: 5px;
-    top: 20%;
-    width: 65px;
-    padding: 10px;
-    border-radius: 50%;
-    font-size: 30px;
-    background-color: #fbf9fa;
-    border: 1px solid #fbf9fa;
-   
-  }
-  button:focus{
-    border-color: #fbf9fa;
-  }
+  .ani{
+  position: relative;
+  animation-name: route;
+  animation-duration: 1s;
+  
+}
+@keyframes route {
+  0%   { right:-500px}
+  50%{right:100px}
+  75% {right:50px}
+  100% { left: 0px}
+}
   
 </style>
