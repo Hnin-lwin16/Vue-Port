@@ -182,7 +182,9 @@ export default {
 .about{
   background-color: #f0f0f0;
   overflow-y: scroll;
-    max-height: 100vh;  
+   max-height: 100vh;  
+   width: 80%;
+   transition: 0.3s;
 }
 .about-body{
   margin:0px 40px;
@@ -240,7 +242,7 @@ export default {
 }
 .myself{
   display: flex;
-  width: 46%;
+  width: 50%;
   justify-content: space-between;
   flex-wrap: wrap;
 }
