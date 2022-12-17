@@ -1,6 +1,6 @@
 <template>
   
-  <section class="nav" :class="{'dark':dark,'whole-oran':oran,'whole-red':red,'whole-green':green,'whole-blue': blue,'whole-pink':pink}">
+  <section class="nav" :class="{'dark':dark,'whole-oran':oran,'whole-green':green,'whole-blue': blue,'whole-pink':pink}">
     <div class="nav-title">
 
         <h1>Atlas</h1>
@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import dark from '../dark'
+
 export default {
   props: {
     dark: {
@@ -76,7 +76,7 @@ export default {
   },
   methods: {
     animation: function(){
-      this.$emit('animation',this.ani = !this.ani)
+      this.$emit('animation',this.ani = true)
     },
     changeDark: function () {
       this.$emit('changeDark',this.dark = !this.dark)
@@ -89,7 +89,6 @@ export default {
     },
     changeRed: function () {
       this.$emit('changeRed', [
-        this.red = !this.red,
         this.oran = this.green = this.blue = this.pink = false
       ])
     
@@ -117,14 +116,7 @@ export default {
     }
   }
  
-  //computed: {
-  //  changeDark: function () {
-  //    return {
-  //      dark: this.dark
-  //   }
-  //  }
-  //}
-}
+  }
 </script>
 
 <style scoped>
@@ -294,13 +286,7 @@ font-family: 'Roboto', sans-serif;*/
 .whole-oran .router-link-active{
   color: #ffa45c !important;
 }
-/*Red*/
-.whole-red .nav-title h1{
-  background-image: linear-gradient(#ff304f, #ff304f), linear-gradient(#ff304f, #ff304f), linear-gradient(#ff304f, #ff304f), linear-gradient(#ff304f, #ff304f);
-}
-.whole-red .router-link-active{
-  color: #ff304f !important;
-}
+
 /*Green*/
 .whole-green .nav-title h1{
   background-image: linear-gradient(#086972, #086972), linear-gradient(#086972, #086972), linear-gradient(#086972, #086972), linear-gradient(#086972, #086972);

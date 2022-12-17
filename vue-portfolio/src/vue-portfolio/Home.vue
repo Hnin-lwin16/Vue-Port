@@ -1,6 +1,6 @@
 <template>
 
- <div class="home"  :class="{'ani':ani,'dark':dark,'oran':oran,'red':red,'green':green,'blue':blue,'pink':pink}">
+ <div class="home"  :class="{'ani':ani,'dark':dark,'oran':oran,'green':green,'blue':blue,'pink':pink}">
 
   <div class="home-text">
     <h1>Hello, my name is <p>Hnin Moh Moh Lwin</p></h1>
@@ -103,21 +103,11 @@ export default {
 
 <style scoped>
 /*Animation*/
-.ani{
-  position: relative;
-  animation-name: route;
-  animation-duration: 1s;
-  
-}
-@keyframes route {
-  0%   { right:-500px}
-  50%{right:100px}
-  75% {right:50px}
-  100% { left: 0px}
-}
+
 .home{
   display: flex;
   background-color: #f0f0f0;
+
 }
 .home-text{
   width: 50%;
@@ -224,17 +214,7 @@ export default {
   background-image: linear-gradient(#ffa45c, #ffa45c), linear-gradient(#ffa45c, #ffa45c), linear-gradient(#ffa45c, #ffa45c), linear-gradient(#ffa45c, #ffa45c);
 }
 /*Red*/
-.red .home-text h1 p,.red .home-web p{
-  color: #ff304f;
-}
-.red .home-btn{
-  background-color: #ff304f;
-  border-color: #ff304f;
-}
-.red .home-btn:hover{
-  background-color: #fff;
-  border-color: #ff304f;
-}
+
 .red .home-bg{
   background-image: linear-gradient(#ff304f, #ff304f), linear-gradient(#ff304f, #ff304f), linear-gradient(#ff304f, #ff304f), linear-gradient(#ff304f, #ff304f);
 }

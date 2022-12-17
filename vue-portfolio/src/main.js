@@ -14,11 +14,11 @@ Vue.config.productionTip = false
 Vue.use(VueRouter)
 
 const route = new VueRouter({
-  routes: Router,
-  mode: 'history'
+    routes: Router,
+    mode: 'history'
 })
 new Vue({
-  el: '#app',
-  render: h => h(App),
-  router: route
+    el: '#app',
+    render: h => h(App),
+    router: route
 })
