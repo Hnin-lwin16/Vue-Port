@@ -94,6 +94,7 @@ export default {
     overflow-y: scroll;
    max-height: 100vh; 
    padding: 90px 40px;
+   flex-grow: 9;
   }
   .cont-title{
     font-size: 30px;

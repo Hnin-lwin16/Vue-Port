@@ -109,6 +109,7 @@ export default {
   background-color: #f0f0f0;
   width: 80%;
   transition: 0.3s;
+  flex-grow: 9;
 }
 .home-text{
   width: 50%;
@@ -263,5 +264,67 @@ export default {
 }
 .pink .home-bg{
   background-image: linear-gradient(#ea7dc7, #ea7dc7), linear-gradient(#ea7dc7, #ea7dc7), linear-gradient(#ea7dc7, #ea7dc7), linear-gradient(#ea7dc7, #ea7dc7) ; 
+}
+
+/*IPad*/
+@media screen and (max-width:1024px){
+  .home{
+   display: inline-block;
+   width: 100%;
+  transition: 0.3s;
+  flex-grow: 9;
+}
+.home-text{
+ width: auto;
+  margin-left: 5.208vw;
+  margin-right: 5.208vw;
+ margin-top: 15%;
+}
+.home-text h1{
+  font-size: 3.906vw;
+}
+
+
+.home-para{
+  line-height: 1.5;
+  margin-top: 2.604vw;
+  text-align: justify;
+  font-size: 2.604vw;
+}
+.home-web{
+  margin-top: 2.604vw;
+}
+.home-web p{
+  display: inline-block;
+  
+}
+.home-btn{
+  margin-top: 6.51vw;
+  padding: 1.302vw 3.906vw;
+  border-radius: 6.51vw;
+ 
+  border: 0.13vw solid #ff304f;
+ 
+}
+.home-btn:hover{
+ 
+  transition: 0.3s;
+}
+/*Image*/
+.home-bg{
+  display: none;
+}
+.home-img{
+ 
+  width: 100%;
+  height: 52.083vw;
+}
+/*Animate*/
+.cursor{
+  display: inline-block;
+  margin-left: 0.391vw;
+  width: 0.521vw;
+ animation: cursor 1s infinite;
+}
 }
 </style>

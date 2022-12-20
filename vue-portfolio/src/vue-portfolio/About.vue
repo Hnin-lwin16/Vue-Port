@@ -185,6 +185,7 @@ export default {
    max-height: 100vh;  
    width: 80%;
    transition: 0.3s;
+   flex-grow: 9;
 }
 .about-body{
   margin:0px 40px;
