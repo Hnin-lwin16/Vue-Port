@@ -110,6 +110,7 @@ export default {
   overflow-y: scroll;
    max-height: 100vh; 
    transition: 0.3s; 
+   flex-grow: 9;
 }
 .ser-title{
   font-size: 30px;

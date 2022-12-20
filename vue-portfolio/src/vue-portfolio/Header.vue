@@ -1,12 +1,12 @@
 <template>
   
   <section class="head">
-    <button class="btn-toggle">
-      <span></span>
+    <button class="btn-toggle" v-on:click="togg"  :class="{'active':toggleItem,'btn-dark':dark,'btn-oran':oran,'btn-green':green,'btn-blue': blue,'btn-pink':pink}">
+      <span ></span>
       <span></span>
       <span></span>
     </button>
-    <section class="nav" :class="{'dark':dark,'whole-oran':oran,'whole-green':green,'whole-blue': blue,'whole-pink':pink}">
+    <section class="nav" :class="{'dark':dark,'whole-oran':oran,'whole-green':green,'whole-blue': blue,'whole-pink':pink,'tog':toggleItem}">
     <div class="nav-title">
 
         <h1>Atlas</h1>
@@ -74,11 +74,15 @@ export default {
     },
     ani: {
       type: Boolean
+    },
+    toggleItem: {
+      type: Boolean
     }
   },
   data () {
     return {
       themeItem: false,
+     
     }
   },
   methods: {
@@ -120,6 +124,12 @@ export default {
     },
     theme: function () {
       this.themeItem = !this.themeItem
+    },
+    togg: function () {
+      this.$emit('toggle', [
+        this.toggleItem = !this.toggleItem,
+      console.log(this.toggleItem)
+     ])
     }
   }
  
@@ -135,14 +145,14 @@ font-family: 'Roboto', sans-serif;*/
 
 
 .head{
- 
+  
   background-color: #fbf9fa;
   height: 100vh;
   transition: 0.3s;
 }
 .nav{
-  width: 20%;
-  margin-left: 25%;
+  width: 100%;
+  
 }
 
 .nav-title{
@@ -184,7 +194,7 @@ font-family: 'Roboto', sans-serif;*/
   .theme-btn{
     transition: 0.3s;
     position: fixed;
-    right: 1px;
+    right: 1%;
     top: 10%;
     background-color: #fff;
     text-align: left;
@@ -321,5 +331,122 @@ font-family: 'Roboto', sans-serif;*/
 }
 .whole-pink .router-link-active{
   color: #ea7dc7 !important;
+}
+
+/*IPad*/
+@media screen and (max-width:1024px){
+ 
+.nav{
+  width: 100%;
+  
+}
+
+.nav-title{
+  padding: 4.557vw 0 19.531vw 0;  
+}
+.nav-title h1{
+ 
+    background-size: 0.521vw 40%, 30% 0.521vw, 0.521vw 40%, 30% 0.521vw, calc(100% - 1.042vw) calc(100% - 1.042vw);
+    background-position: left bottom, left bottom, right top, right top, 0.521vw 0.521vw;
+    font-weight: 700;
+    font-size: 3.906vw;
+    width: 19.531vw;
+    /*margin: 2.604vw;*/
+   
+  padding: 3.906vw 1.302vw;
+  
+}
+
+/*button Change*/
+.theme-change{
+  
+  width: 39.063vw;
+}
+
+.change-dark{
+  z-index: 99999;
+    right: 1%;
+    top: 14%;
+    width: 6.51vw;
+    padding: 1.302vw;
+    border-radius: 50%;
+    font-size: 2.604vw;
+   
+    border: 0.13vw solid #fbf9fa;
+   margin-right: 2.604vw;
+   
+  }
+  .theme-btn{
+    transition: 0.3s;
+   
+    right: 1%;
+    top: 5%;
+   
+    text-align: left;
+    padding: 2.604vw;
+    border: 0.13vw solid #fff;
+    border-radius: 0.651vw;
+    z-index: 99999;
+  }
+  .theme-btn ul{
+    
+    margin-top: 1.302vw;
+  }
+  .theme-btn h3{
+    font-size: 1.953vw;
+    font-weight: 300;
+  }
+  .theme-btn ul li div{
+    margin-right: 0.651vw;
+    width: 3.906vw;
+    padding: 1.953vw;
+    border-radius: 50%;
+
+  }
+  
+  .theme{
+    right: 1%;
+    top: 5%;
+  }
+  .whole-theme .theme, .whole-theme .change-dark{
+    right: 27%;
+    z-index: 99999;
+  }
+   
+  
+  
+  /*Nav List*/
+.nav-list{
+  
+  width: 19.531vw;
+  
+}
+.nav-item li{
+ 
+  border: 0.13vw solid #f2edef;
+  border-radius: 9%;
+  padding: 1.302vw 1.302vw;
+ 
+  margin-bottom: 2.604vw;
+}
+.nav-item li a{
+  margin: 0 2.604vw;
+  
+}
+.btn-dark{
+  background-color: #575151;
+}
+.btn-oran span{
+  background-color: #ffa45c;
+}
+.btn-green span{
+  background-color: #086972;
+}
+.btn-blue span{
+  background-color: #1f4287;
+}
+.btn-pink span{
+  background-color: #ea7dc7;
+}
 }
 </style>

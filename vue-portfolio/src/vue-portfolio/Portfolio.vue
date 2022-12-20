@@ -48,6 +48,7 @@ export default {
    width: 80%;
    transition: 0.3s;
    padding: 0 40px;
+   flex-grow: 9;
 }
 .port-title,.pro-title{
   margin-top: 60px;
