@@ -3,7 +3,7 @@
   
   <div class="body">
     <header-nav v-bind:oran="oran"  v-bind:dark="dark" v-bind:red="red" v-bind:green="green" :blue="blue" :pink="pink" v-bind:ani="ani" v-bind:moon="moon" v-on:animation="Ani($event)" v-on:changeDark="Dark($event)" v-on:changeOran="Oran($event)" v-on:changeRed="Red()" v-on:changeGreen="Green($event)" v-on:changeBlue="Blue($event)" v-on:changePink="Pink($event)">
-      
+    
     </header-nav>
     <router-view class="router" v-bind:dark="dark" v-bind:oran="oran" v-bind:red="red" v-bind:green="green" :blue="blue" :pink="pink" :ani="ani"></router-view>
     
@@ -76,6 +76,9 @@ export default {
   .body{
     display: flex;
     flex-wrap: wrap;
+  }
+  .btn-toggle{
+    display: none;
   }
   .ani{
   position: relative;

@@ -1,6 +1,12 @@
 <template>
   
-  <section class="nav" :class="{'dark':dark,'whole-oran':oran,'whole-green':green,'whole-blue': blue,'whole-pink':pink}">
+  <section class="head">
+    <button class="btn-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <section class="nav" :class="{'dark':dark,'whole-oran':oran,'whole-green':green,'whole-blue': blue,'whole-pink':pink}">
     <div class="nav-title">
 
         <h1>Atlas</h1>
@@ -11,7 +17,7 @@
             <li @click="animation"> <router-link to="/" exact><font-awesome-icon icon="fa-solid fa-home" />Home</router-link></li>
             <li> <router-link to="/about" exact><font-awesome-icon icon="fa-solid fa-user" />About</router-link></li>
             <li> <router-link to="/service" exact><font-awesome-icon icon="fa-solid fa-list" />Services</router-link></li>
-            <li><router-link to="/porfolio" exact><font-awesome-icon icon="fa-solid fa-briefcase" />Portfolio</router-link></li>
+            <li><router-link to="/portfolio" exact><font-awesome-icon icon="fa-solid fa-briefcase" />Portfolio</router-link></li>
             <li><router-link to="/contact" exact><font-awesome-icon icon="fa-solid fa-comments" />Contact</router-link></li>
         </ul>
     </div>
@@ -37,6 +43,7 @@
     </div>
    
     
+  </section>
   </section>
 </template>
 
@@ -127,12 +134,17 @@ font-family: 'Oswald', sans-serif;
 font-family: 'Roboto', sans-serif;*/
 
 
-.nav{
-  width: 20%;
+.head{
+ 
   background-color: #fbf9fa;
   height: 100vh;
   transition: 0.3s;
 }
+.nav{
+  width: 20%;
+  margin-left: 25%;
+}
+
 .nav-title{
   padding: 35px 0 150px 0;  
 }
@@ -158,7 +170,7 @@ font-family: 'Roboto', sans-serif;*/
 
 .change-dark{
     position: fixed;
-    right: 5%;
+    right: 1%;
     top: 17%;
     width: 50px;
     padding: 10px;
@@ -201,7 +213,7 @@ font-family: 'Roboto', sans-serif;*/
     border-color: #fbf9fa;
   }
   .theme{
-    right: 5%;
+    right: 1%;
     top: 10%;
   }
   .whole-theme .theme, .whole-theme .change-dark{
