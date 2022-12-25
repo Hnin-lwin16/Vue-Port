@@ -106,7 +106,7 @@ export default {
 .service{
   background-color: #f0f0f0;
   padding: 90px 40px;
-  width: 80%;
+  width: 700px;
   overflow-y: scroll;
    max-height: 100vh; 
    transition: 0.3s; 
@@ -228,5 +228,93 @@ export default {
 }
 .pink .ser-ibody div svg{
   color: #ea7dc7;
+}
+
+/*Ipad*/
+@media screen and (max-width:1024px){
+.service{
+  
+  padding: 11.719vw 5.208vw;
+  width: 100%;
+  
+   max-height: 100vh; 
+   transition: 0.3s; 
+  
+}
+.ser-title{
+  font-size: 3.906vw;
+  font-weight: 700;
+ 
+  margin-bottom: 7.813vw;
+ 
+}
+.ser-title::before{
+  
+  width: 6.51vw;
+  height: 0.391vw;
+ 
+  bottom: -30%;
+}
+.ser-title::after{
+ 
+  width: 3.906vw;
+  height: 0.391vw;
+ 
+  bottom: -50%;
+  left: 0;
+}
+.ser-list{
+  
+  width: 100%;
+ 
+}
+.ser-list li{
+ width: 43.502vw;
+ 
+  padding: 2.604vw;
+ 
+ margin-right: 2.208vw;
+ box-shadow: rgba(0, 0, 0, 0.24) 0vw 0.391vw 1.042vw;
+ margin-bottom: 2.604vw;
+}
+.ser-list li:nth-child(2n){
+  margin-right: 0 !important;
+}
+.ser-list li:nth-child(3n){
+  margin-right: 2.208vw;
+}
+.ser-item h2{
+  
+  margin-bottom: 2.604vw;
+  font-size: 3.255vw;
+  font-weight: 700;
+}
+.ser-ibody div{
+  width: 9.115vw;
+  
+  padding: 1.953vw 0;
+  
+  
+  margin: 0 auto 2.604vw;
+}
+.ser-ibody div svg{
+  font-size: 4.557vw;
+  
+}
+.ser-ibody p{
+  font-size: 1.953vw;
+  font-weight: 400;
+  line-height: 1.8;
+  margin-bottom: 1.302vw;
+}
+.ser-item:hover .ser-ibody div{
+ 
+  border-radius: 50%;
+  transition: 0.2s;
+}
+.ser-item:hover .ser-ibody div svg{
+  
+  transition: 0.2s;
+}
 }
 </style>
