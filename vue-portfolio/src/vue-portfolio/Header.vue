@@ -1,6 +1,6 @@
 <template>
   
-  <section class="head">
+  <section class="head" :class="{'dark':dark}">
     <button class="btn-toggle" v-on:click="togg"  :class="{'active':toggleItem,'btn-dark':dark,'btn-oran':oran,'btn-green':green,'btn-blue': blue,'btn-pink':pink}">
       <span ></span>
       <span></span>

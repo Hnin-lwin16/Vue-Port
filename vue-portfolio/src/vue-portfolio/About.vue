@@ -42,7 +42,7 @@
         <hr>
        </div>
        <!--//myself-right-->
-       <div myself-btn>
+       <div class="myself-btn">
         <button class="about-btn cv">
           Dowload CV
         </button>
@@ -183,7 +183,7 @@ export default {
   background-color: #f0f0f0;
   overflow-y: scroll;
    max-height: 100vh;  
-   width: 80%;
+   width: 700px;
    transition: 0.3s;
    flex-grow: 9;
 }
@@ -438,5 +438,186 @@ export default {
   background-color: #fff;
     color: #000;
     border-color: #ea7dc7
+}
+
+/*Ipad*/
+@media screen and (max-width:1024px){
+  .about{
+ 
+   max-height: 100vh;  
+   width: 100%;
+   transition: 0.3s;
+   flex-grow: 9;
+}
+.about-body{
+  margin:0vw 5.208vw;
+}
+.about-title{
+  margin-top: 7.813vw;
+  
+  font-size: 3.906vw;
+  font-weight: 700;
+  
+}
+.about-title h1{
+  margin-bottom: 7%;
+}
+.about-title::before{
+ 
+  width:10.417vw;
+  height: 0.391vw;
+ 
+  bottom: -30%;
+}
+.about-title::after{
+ 
+  width:6.51vw;
+  height: 0.391vw;
+  
+  bottom: -50%;
+}
+/*About Param*/
+
+.about-intro{
+  font-size: 3.255vw;
+  font-weight: 700;
+  margin-bottom: 2.604vw;
+}
+.about-intro p{
+ 
+  font-size: 3.255vw;
+  font-weight: 700;
+}
+.about-pb{
+  font-size: 2.604vw;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.3;
+}
+/*About Myself*/
+.about-myself{
+  margin-top: 6.51vw;
+  display: inline-block;
+}
+.myself{
+  
+  width: 100%;
+  
+ 
+  margin-bottom: 5.208vw;
+}
+.myself p{
+  display: block;
+}
+
+.myself p, .skill div{
+  font-size: 1.953vw;
+  font-weight: 700;
+ 
+  letter-spacing: 0.11em;
+}
+.myself span{
+  margin-bottom: 1.953vw;
+  display: inline-block;
+}
+.myself p{
+  margin-bottom: 1.302vw;
+}
+.myself hr{
+  width: 39.063vw;
+  margin-bottom: 1.302vw;
+}
+.myself-btn{
+  width: 50%;
+  margin: 0 auto;
+}
+.about-btn{
+  margin-top: 2.604vw;
+  padding: 1.302vw 3.906vw;
+  border-radius: 6.51vw;
+ 
+  border: 0.13vw solid #ff304f;
+ 
+ font-size: 2.344vw;
+ font-weight: 400;
+ transition: 0.3s;
+}
+.about-btn:hover{
+ 
+  transition: 0.3s;
+}
+.cv{
+  margin-right: 1.302vw;
+}
+/*Skill*/
+
+
+.skill-level{
+  width: 65.104vw;
+  height: 1.302vw;
+ 
+  border-radius: 5.208vw;
+  margin: 2.604vw 0vw;
+}
+.skill-level div{
+  height: 1.302vw;
+  width: 52.083vw;
+ 
+  border-radius: 5.208vw;
+}
+/*Education*/
+.infor{
+  padding: 5.208vw 0;
+ 
+}
+.edu{
+  width: 47%;
+}
+.edu-title{
+  margin-bottom: 3.906vw;
+  font-size: 3.255vw;
+  font-weight: 700;
+}
+.edu-body{
+  
+  border-radius: 1.302vw;
+  padding: 1.302vw 0  1.302vw 7% ;
+  box-shadow: rgba(0, 0, 0, 0.24) 0vw 0.391vw 1.042vw;
+}
+.date{
+  margin-bottom: 1.302vw;
+ 
+  font-size: 1.953vw;
+  font-weight: 300;
+}
+.date svg{
+  margin-right: 1.302vw;
+}
+
+.edu-block{
+  width: 0.391vw;
+  height: 35.156vw;
+ 
+  margin-right: 2.604vw;
+ 
+}
+
+.edu-block::before{
+  
+  width: 1.953vw;
+  height: 1.953vw;
+  
+  border-radius: 50%;
+  left: -1.042vw;
+  
+}
+.edu-infor{
+ 
+  line-height: 1.8;
+  letter-spacing: 0.1em;
+}
+.edu-infor p{
+  padding-right: 2.604vw;
+}
 }
 </style>
